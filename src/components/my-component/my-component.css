@@ -1,0 +1,26 @@
+
+
+.input-box {
+    background-color: #313131;
+    padding: 5px;
+    color: #f3f3f3;
+    height: 60px;
+    width: 100%;
+    max-width: 320px;
+    margin: 30px 0;
+    cursor: pointer;
+
+}
+
+.input-box:hover {
+    background-color: #1d1c1c;
+}
+
+.input-box .selected-date {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+}

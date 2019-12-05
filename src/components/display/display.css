@@ -1,0 +1,84 @@
+.calendar {
+  display: none;
+  position: absolute;
+  width: 100%;
+  max-width: 320px;
+  padding: 5px;
+  background-color: #313131;
+}
+
+.calendar.active {
+  display: block;
+}
+
+
+.input-box {
+  background-color: #313131;
+  padding: 5px;
+  color: #f3f3f3;
+  height: 60px;
+  width: 100%;
+  max-width: 320px;
+  margin: 30px 0;
+  cursor: pointer;
+
+}
+
+.input-box:hover {
+  background-color: #1d1c1c;
+}
+
+.input-box .selected-date {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+
+.calendar {
+  color: #f3f3f3;
+}
+
+.month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #7e7c7c;
+}
+
+
+.prev-mth, .next-mth {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.prev-mth:hover, .next-mth:hover {
+  background-color: #1d1c1c;
+}
+
+.prev-mth:active, .next-mth:active {
+  background-color: #0a3697;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 200px;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day.selected {
+  background-color: #0a3697;
+}
