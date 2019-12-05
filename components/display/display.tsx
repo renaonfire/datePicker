@@ -97,8 +97,10 @@ componentDidLoad(){
         console.log("day clicked");
         selectedDate = new Date(year + "-" + (month + 1) + "-" + (i + 1));
         selectedDay = (i + 1);
-        selectedMonth = month;
+        selectedMonth = (month + 1);
         selectedYear = year;
+
+        displayedDate.textContent = String(selectedDay + " / " + selectedMonth + " / " + year);
 
         populateDates();
       });
@@ -126,6 +128,7 @@ componentDidLoad(){
     let day = date.getDate();
     let month = date.getMonth();
     let year = date.getFullYear();
+
 
 
 
