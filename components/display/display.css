@@ -1,9 +1,7 @@
 .calendar {
   display: none;
-  position: absolute;
+  position: relative;
   width: 100%;
-  max-width: 320px;
-  padding: 5px;
   background-color: #313131;
 }
 
@@ -14,7 +12,6 @@
 
 .input-box {
   background-color: #313131;
-  padding: 5px;
   color: #f3f3f3;
   height: 60px;
   width: 100%;
@@ -47,6 +44,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #7e7c7c;
+  padding: 5px;
 }
 
 
@@ -71,6 +69,7 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   height: 200px;
+  padding: 5px;
 }
 
 .day {
