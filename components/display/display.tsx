@@ -46,7 +46,7 @@ componentDidLoad(){
   }
 
 
-  function goToNextMonth (e) {
+  function goToNextMonth () {
     month++;
     if(month > 11){
       month = 0;
@@ -56,7 +56,7 @@ componentDidLoad(){
     populateDates();
   }
 
-  function goToPrevMonth (e) {
+  function goToPrevMonth () {
     month--;
     if(month < 0){
       month = 11;
@@ -89,20 +89,27 @@ componentDidLoad(){
       day_element.classList.add("day");
       day_element.textContent = String(i + 1);
 
+      console.log(selectedDay, selectedYear, selectedMonth);
+
       if(selectedDay == (i + 1) && selectedYear == year && selectedMonth == month) {
         day_element.classList.add("selected");
+       
       }
 
       day_element.addEventListener("click", function () {
-        console.log("day clicked");
-        selectedDate = new Date(year + "-" + (month + 1) + "-" + (i + 1));
-        selectedDay = (i + 1);
-        selectedMonth = (month + 1);
-        selectedYear = year;
+          console.log("day clicked");
+        
+          selectedDate = new Date(year + "-" + (month + 1) + "-" + (i + 1));
+          selectedDay = (i + 1);
+          selectedMonth = (month + 1);
+          selectedYear = year;
 
-        displayedDate.textContent = String(selectedDay + " / " + selectedMonth + " / " + year);
-
-        populateDates();
+          displayedDate.textContent = String(selectedDay + " / " + selectedMonth + " / " + year);
+          console.log(selectedDate);
+          
+          
+        
+          populateDates();
       });
 
       days_element.appendChild(day_element);
