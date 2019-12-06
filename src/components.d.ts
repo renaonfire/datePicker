@@ -11,20 +11,6 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface DatesDisplay {}
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
 }
 
 declare global {
@@ -35,38 +21,16 @@ declare global {
     prototype: HTMLDatesDisplayElement;
     new (): HTMLDatesDisplayElement;
   };
-
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
   interface HTMLElementTagNameMap {
     'dates-display': HTMLDatesDisplayElement;
-    'my-component': HTMLMyComponentElement;
   }
 }
 
 declare namespace LocalJSX {
   interface DatesDisplay {}
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
 
   interface IntrinsicElements {
     'dates-display': DatesDisplay;
-    'my-component': MyComponent;
   }
 }
 
@@ -77,7 +41,6 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'dates-display': LocalJSX.DatesDisplay & JSXBase.HTMLAttributes<HTMLDatesDisplayElement>;
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
     }
   }
 }
