@@ -40,15 +40,6 @@ componentDidLoad(){
 
   
 
-  function formatDate (d) {
-
-    let day = d.getDate();
-    let month = d.getMonth() + 1;
-    let year = d.getFullYear();
-  
-    return day + ' / ' + month + ' / ' + year;
-  }
-
 
   function showCalendar() {
    cal.classList.toggle("active");
@@ -113,7 +104,8 @@ componentDidLoad(){
           selectedMonth = month;
           selectedYear = year;
 
-          displayedDate.textContent = formatDate(selectedDate);
+          // displayedDate.textContent = formatDate(selectedDate);
+          displayedDate.textContent = String(selectedDay + " / " + (selectedMonth + 1) + " / " + selectedYear);
           console.log("selectedDate from event listener: ", selectedDay, selectedYear, selectedMonth);
           console.log("years var: ", year, month)
           
