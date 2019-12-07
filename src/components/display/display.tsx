@@ -7,6 +7,7 @@ import { Component, h } from '@stencil/core';
 })
 export class Display {
 
+
 componentDidLoad(){
   
   
@@ -39,6 +40,21 @@ componentDidLoad(){
 
   
 
+  function formatDate (d) {
+    let day = d.getDate();
+    if (day < 10) {
+      day = '0' + day;
+    }
+  
+    let month = d.getMonth() + 1;
+    if (month < 10) {
+      month = '0' + month;
+    }
+  
+    let year = d.getFullYear();
+  
+    return day + ' / ' + month + ' / ' + year;
+  }
 
 
   function showCalendar() {
@@ -89,25 +105,21 @@ componentDidLoad(){
       day_element.classList.add("day");
       day_element.textContent = String(i + 1);
 
-      console.log(selectedDay, selectedYear, selectedMonth);
-
+    
       if(selectedDay == (i + 1) && selectedYear == year && selectedMonth == month) {
         day_element.classList.add("selected");
        
       }
 
       day_element.addEventListener("click", function () {
-          console.log("day clicked");
         
           selectedDate = new Date(year + "-" + (month + 1) + "-" + (i + 1));
           selectedDay = (i + 1);
-          selectedMonth = (month + 1);
+          selectedMonth = month;
           selectedYear = year;
 
-          displayedDate.textContent = String(selectedDay + " / " + selectedMonth + " / " + year);
-          console.log(selectedDate);
-          
-          
+          displayedDate.textContent = formatDate(selectedDate);
+       
         
           populateDates();
       });
@@ -119,8 +131,11 @@ componentDidLoad(){
   
   }
 
+ 
+
   populateDates();
 
+ 
 
 }
 

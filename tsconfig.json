@@ -18,7 +18,7 @@
   },
   "include": [
     "src",
-    "types/jsx.d.ts"
+    "types/jsx.d.ts", "src/components.d.ts", "src/index.ts"
   ],
   "exclude": [
     "node_modules"
